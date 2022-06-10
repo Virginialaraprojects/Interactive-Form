@@ -15,7 +15,7 @@ if(e.target.value ==='other'){
  const design=document.getElementById('design');
  const color=document.getElementById('color');
  const colorOption= color.children;
-
+//step 5
  color.disabled=true;
  design.addEventListener('change', (e)=>{
     color.disabled=false;
@@ -24,17 +24,31 @@ if(e.target.value ==='other'){
         const dataTheme=colorOption[i].getAttribute('data-theme');
         
         if (dataTheme === target){
-      //color.disabeled=false;
-
           colorOption[i].hidden=false;
           colorOption[i].setAttribute('selected','selected');
-      //shirtColor.setAttribute('data-theme',dataTheme)
-      //shirtColor.selected =true;
          }else{
-          colorOption.hidden= true;
-          colorOption.removeAttribute('selected')= false;
+          colorOption[i].hidden= true;
+          colorOption[i].removeAttribute('selected')
    }
  }
   
- });
+ })
+
+ const registerActivities=document.getElementById('activities');
+ const costActivities=document.getElementById('activities-cost');
+ const totalCostActivities= 0;
+
+ /*registerActivities.addEventListener('change',(e)=>{
+const click=e.target
+const dataCost= +click.getAttribute('data-cost');
+if(){
+
+
+}
+
+
+ });*/
+
+
+
 
