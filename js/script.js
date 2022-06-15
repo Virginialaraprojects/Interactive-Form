@@ -122,7 +122,7 @@ function checkName(){
 // The helper function to validate the email input.
 function checkEmail(){
     const emailValue=emailAddress.value;
-    const emailValid= /^[^@]+@[^@.]+\.[a-z]+$/i.test(emailValue);
+    const emailValid= /^[^@]+@[^@]+\.[a-z]+$/i.test(emailValue);
     if(emailValid){
         passValidation(emailAddress);
     }else{
@@ -212,7 +212,7 @@ for (let i=0; i< checkboxActvities.length; i++){
 }
 
 //Checks the requires fields and prevents the form from submitting if invalid.
-form.addEventListener('submit',e =>{
+form.addEventListener('submit',(e) =>{
     if(!checkName()){
         e.preventDefault();
     }
