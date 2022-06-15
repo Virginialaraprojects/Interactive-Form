@@ -134,12 +134,19 @@ function checkEmail(){
 function checkRegisterActivties(){
     const registerActivitiesValid= totalCostActivities >0;
     if(registerActivitiesValid){
-        passValidation(registerActivities);
-    }else{
-        failValidation(registerActivities);
-    }
+       /* passValidation(registerActivities);*/
+       registerActivities.classList.add('valid');
+       registerActivities.classList.remove('not-valid');
+       registerActivities.lastElementChild.style.display ='none';
+    } else{
+        registerActivities.classList.add('not-valid');
+        registerActivities.classList.remove('valid');
+        registerActivities.lastElementChild.style.display ='block';
+        }
     return registerActivitiesValid ;
-}
+
+    }
+    
 // The helper function to validate the cardNumber input.
 function checkCardNumber(){
     const cardNumberValue=cardNumber.value;
@@ -175,9 +182,12 @@ function checkCvv(){
     }
     return cvvValid;
 }
+
  //Real time validation for the required fields.
  //https://www.codegrepper.com/code-examples/javascript/how+to+check+if+an+element+is+in+focus+javascript
-form.addEventListener('keyup',e =>{
+/*form.addEventListener('keyup',e =>{
+    console.log(e);
+    if(e.code !=='Tab'){
     if(nameElement ===document.activeElement){
         checkName();
     }
@@ -196,8 +206,9 @@ form.addEventListener('keyup',e =>{
     if(cvv ===document.activeElement){
         checkCvv();
     }
+};
+});*/
 
-});
 //Step 9: Makes the register activity section border in focus using the for loop
 
 const checkboxActvities = document.querySelectorAll('[type="checkbox"]');
